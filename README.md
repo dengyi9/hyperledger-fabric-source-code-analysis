@@ -13,7 +13,7 @@
 1. [Gossip通讯分析](Gossip通讯分析.md)
 1. [Fabric-CA分析](Fabric-CA分析.md)
 1. [项目编译构建CI](项目编译构建.md)  
-1. [单元测试分析](测试分析.md) ：进行中
+1. [测试分析](测试分析.md) ：初步完成
 
 
 注：基于`release-1.3`版本(git commit `abe9d79667ba7ccc2adca041449998d333b911d1`)
