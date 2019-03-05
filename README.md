@@ -11,12 +11,14 @@
 
 ### 其他
 1. [Gossip通讯分析](Gossip通讯分析.md)
-1. [Fabric-CA分析](Fabric-CA分析.md)
+1. [Fabric-CA分析](Fabric-CA分析.md): 进行中
 1. [项目编译构建CI](项目编译构建.md)  
 1. [测试分析](测试分析.md) ：初步完成
 
 
-注：基于`release-1.3`版本(git commit `abe9d79667ba7ccc2adca041449998d333b911d1`)
+> 注：都基于`release-1.3`版本  
+> fabric: git commit 版本号 `abe9d79667ba7ccc2adca041449998d333b911d1`  
+> fabric-ca: git commit 版本号 `4f6586ea347d485efbf25b1abd8d741025ab5b00` 
 
 ### LICENSE
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />本作品采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
