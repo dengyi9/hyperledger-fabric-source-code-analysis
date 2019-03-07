@@ -24,8 +24,23 @@ fabric-ca-server init -b adminname:adminpassword
 
 1. 执行对象函数func (s *ServerCmd) Execute()，启动相应函数
 (`src/github.com/hyperledger/fabric-ca/cmd/fabric-ca-server/main.go:45`)。
-命令fabric-ca-server init的实现为initCmd
+命令fabric-ca-server init的执行时，依次调用rootCmd、initCmd
 (`src/github.com/hyperledger/fabric-ca/cmd/fabric-ca-server/servercmd.go:109`)。
 
-1. initCmd执行时，进一步调用
+1. 首先调用rootCmd，执行对象函数func (s *ServerCmd) configInit()读取配置信息，保存到ServerCmd自身对象属性中
+(`src/github.com/hyperledger/fabric-ca/cmd/fabric-ca-server/servercmd.go:81`)
+
+1. initCmd执行时，调用func (s *ServerCmd) getServer() *lib.Server，根据属性参数生成Server对象，
 （`src/github.com/hyperledger/fabric-ca/cmd/fabric-ca-server/servercmd.go:102`）
+进一步，调用func (s *Server) Init(renew bool)，处理初始化过程
+(`src/github.com/hyperledger/fabric-ca/lib/server.go:88`)。
+    
+1. 初始化过程中
+    * 调用对象方法func (s *Server) initConfig()，初始化配置
+    (`src/github.com/hyperledger/fabric-ca/lib/server.go:98`)
+    
+    * 调用对象方法func (s *Server) initDefaultCA(renew bool)，初始化默认CA
+    (`src/github.com/hyperledger/fabric-ca/lib/server.go:103`)
+
+1. 完成初始化，结束
+
